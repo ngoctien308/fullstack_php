@@ -1,15 +1,18 @@
 <?php
 
-class Database {
+class Database
+{
     private $connect;
-    public function __construct() {
+    public function __construct()
+    {
         $this->connect = new mysqli('localhost:3307', 'root', '', 'testmvc');
         if ($this->connect->connect_error) {
-            die("Failed database connection: " . $this->conn->connect_error);
+            die("Failed database connection: " . $this->connect->connect_error);
         }
     }
 
-    public function getConnect() {
+    public function getConnect()
+    {
         return $this->connect;
     }
 }
